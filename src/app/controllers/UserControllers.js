@@ -1,25 +1,27 @@
-import User from "../models/user"
-import {v4} from "uuid"
+
+import { v4 } from "uuid"
+import User from "../models/User"
 
 
 
 class UserController {
-    async store (request, response){
+    async store(request, response) {
 
-         const {name, email, password_hash, admin} = request.body
-        const user= await User.create({
-      
-        id: v4(),
-        name,
-        email,
-        password_hash:"5e4r4f5r"
-    
-    });
-    return response.status(201).json(user)
+        const { name, email, password_hash, admin } = request.body
+        const user = await User.create({
+
+            id: v4(),
+            name,
+            email,
+            password_hash,
+            admin,
+
+        });
+        return response.status(201).json(user)
 
     }
 }
-export default  new UserController()
+export default new UserController()
 
 
 

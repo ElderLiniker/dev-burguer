@@ -7,7 +7,11 @@ export default [
   {languageOptions: { globals: globals.node },
 },
   pluginJs.configs.recommended,
-  
+  {
+    "rules": {
+      "no-unused-vars": "off"
+    }
+  }
 
   
   
